@@ -6,13 +6,11 @@ In this project, you will be simulating a Unix file system using a tree. This is
 
 We have seen a lot of useful commands so far, such as: **mkdir**, **rmdir**, **ls**, **pwd**, and **cd**. As we begin to study C, it turns out that there is an interesting application of a data structure called a _tree_ which allows us to simulate these commands in code. Though this project is only in C, it will be a good review for your Unix knowledge. For simplicity, we won't be implementing flags on commands.
 
-A tree is a data structure (more specifically, graphs) which you'll see in *Data Structures & Algorithms*, *Discrete Math*, and again in *Algorithms*.
-
-Circles are "nodes" or "vertices", and have data associated with them, such as a name. Edges between nodes create parent-child relationships.
-
-For more on trees, read [trees.md](trees.md).
+A tree is a data structure (more specifically, graphs) which you'll see in *Data Structures & Algorithms*, *Discrete Math*, and again in *Algorithms*. For more on trees, read [trees.md](trees.md).
 
 Your task on this project is to use a tree to simulate the **mkdir** command in Linux file system tree, where nodes represent files and directories along a path.
+
+We have already implemented **ls**, **pwd**, and **cd** for you. You can use these commands while running your program to test if your mkdir is working correctly.
 
 **Important Note**: For this project, we are **only** asking you to implement the **mkdir** command and the code to run it. You are **not** implementing any other commands, though that would be fun. ;)
 
