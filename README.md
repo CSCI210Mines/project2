@@ -4,15 +4,28 @@ In this project, you will be simulating a Unix file system using a tree. This is
 
 ## Problem Statement
 
-We have seen a lot of useful commands so far, such as: **mkdir**, **rmdir**, **ls**, and **cd**. As we begin to study C, it turns out that there is an interesting application of a data structure called a **tree** which allows us to simulate these commands in code. Though this project is only in C, it will be a good review for your Unix knowledge.
+We have seen a lot of useful commands so far, such as: **mkdir**, **rmdir**, **ls**, **pwd**, and **cd**. As we begin to study C, it turns out that there is an interesting application of a data structure called a _tree_ which allows us to simulate these commands in code. Though this project is only in C, it will be a good review for your Unix knowledge. For simplicity, we won't be implementing flags on commands.
 
 A tree is a data structure (more specifically, graphs) which you'll see in *Data Structures & Algorithms*, *Discrete Math*, and again in *Algorithms*.
 
 Circles are "nodes" or "vertices", and have data associated with them, such as a name. Edges between nodes create parent-child relationships.
 
+For more on trees, read [trees.md](trees.md).
+
 Your task on this project is to use a tree to simulate the **mkdir** command in Linux file system tree, where nodes represent files and directories along a path.
 
 **Important Note**: For this project, we are **only** asking you to implement the **mkdir** command and the code to run it. You are **not** implementing any other commands, though that would be fun. ;)
+
+## Tips
+
+A good way to approach this project may be the following:
+- Implement the main() function, including the switch case for commands. Implement findCmd() to help.
+- Initialize any Node structs or variables you might need.
+- Implement the tokenizer using `strtok`: split strings based on delimiter ("/"); store tokens so that they can be used later in the program (splitting dirName and pathName for example)
+- Implement mkdir functionality
+    - Handle whether path is absolute or relative
+	- Create a new directory node
+	- Ensure that the directory node is properly connected (make sure it is the child/sibling of the proper node) and initialized. (fileType = 'D', childPtr = null, etc.)
 
 ## Input Format
 
@@ -68,23 +81,3 @@ OUTPUT ERROR: subdirectory a on path does not exist
 OUTPUT SUCCESS: node a created
 OUTPUT SUCCESS: node b created
 ```
-
-## Development Notes & Roadmap
-
-## Part 1: Implement tokenizer (using strtok) and main (switch case and gets pathname if there is one)
-
-### MAIN:
-	- Switch case
-	- FindCMD
-	- Node struct 
-	- Initialize Node
-
-### TOKENIZER:
-	- Split strings based on delimiter ("/")
-	- Store tokens so that they can be used later in the program (splitting dirName and pathName for example)
-
-## Part 2: Implement mkdir functionality
-	- Handle whether path is absolute or relative
-	- Create a new directory node
-	- Ensure that the directory node is properly connected (make sure it is the child/sibling of the proper node) and initialized. (fileType = 'D', childPtr = null, etc.)
-
