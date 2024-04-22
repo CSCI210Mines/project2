@@ -79,3 +79,35 @@ OUTPUT ERROR: subdirectory a on path does not exist
 OUTPUT SUCCESS: node a created
 OUTPUT SUCCESS: node b created
 ```
+
+### Sample Execution 3
+
+Input
+```
+mkdir a/b
+mkdir a
+mkdir a/b
+quit
+```
+
+Output
+```
+FAIL - Directory a does not exist
+SUCCESS - Node a successfully created
+SUCCESS - Node a/b successfully created
+```
+
+### Sample Execution 4
+
+Input
+```
+mkdir a
+mkdir b
+quit
+```
+
+Output
+```
+SUCCESS - Node a successfully created
+SUCCESS - Node b successfully created
+```
