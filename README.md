@@ -10,9 +10,17 @@ A tree is a data structure (more specifically, graphs) which you'll see in *Data
 
 Your task on this project is to use a tree to simulate the **mkdir** command in Linux file system tree, where nodes represent files and directories along a path.
 
-We have already implemented **ls**, **pwd**, and **cd** for you. You can use these commands while running your program to test if your mkdir is working correctly.
-
 **Important Note**: For this project, we are **only** asking you to implement the **mkdir** command and the code to run it. You are **not** implementing any other commands, though that would be fun. ;)
+
+## Supplemental Commands
+
+We have already implemented **ls**, **pwd**, **cd**, and other commands for you (you may view these by typing menu when prompted for a command). You can use these commands while running your program to test if your mkdir is working correctly.
+
+These fundamental commands function the same as in a standard linux terminal:
+
+- cd: change directory, allows for the traversal between directories
+- ls: list directory contents, displays files and directories within the current directory
+- pwd: print working directory, shows the full path of the current directory.
 
 ## Tips
 
