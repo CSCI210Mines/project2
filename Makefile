@@ -1,4 +1,4 @@
-CC=clang
+CC=gcc
 CFLAGS=-g -Werror -Wall -Wstrict-prototypes -Wundef -Wmissing-declarations -Wmissing-prototypes -std=gnu17 -ggdb3 -fsanitize=address
 SRCS=main.c
 TARGET=tree
