@@ -126,3 +126,50 @@ Output
 MKDIR SUCCESS: node a successfully created
 MKDIR SUCCESS: node b successfully created
 ```
+
+### Github Repo Setup and Gradescope Submission Instructions
+
+Git command line tools is already installed on isengard. If you want to have git command line tools on your own Linux distribution, you can use the following command to install it:
+
+```
+sudo apt install git-all
+```
+
+The authentication uses SSH, so you need to first create your public keys using the **ssh-keygen** command, from the terminal prompt. You will also set a password during public key generation, so make sure you take a note of that password, as it will be required for connection to a github repo. **ssh-keygen** generates a couple of files. By default they are in the **.ssh** directory under your home directory. Use the following command to display the contents of your publich key:
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+You are going to add the contents of this file to your Github profile as a new SSH key by going to https://github.com/settings/keys and then clicking on the New SSH Key link at the top-right of the page. Paste the contents of the id_rsa.pub file in the **Key** textbox and give it a name to this key to idenify the environment it was created in, e.g., isengard, my_macbook, etc.
+
+The next step is to configure your git user settings from the terminal prompt from the same shell prompt where you did ssh-keygen. At the minimum you should configure your email and your name using the following commands (replace the email and name with your info):
+
+```
+git config --global user.email "tolgacan@mines.edu"
+git config --global user.name "Tolga Can"
+```
+
+Create a private repository for this project under your own user name. For example, I created a private repo named **csci210_project2** and my github username is tolgacan. You can use the following command sequence to clone the starter repo and copy it to your private repo to work with. The **project2** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
+
+```
+git clone git@github.com:CSCI210Mines/project2.git
+git remote remove origin
+git remote add origin git@github.com:tolgacan/csci210_project2.git  # this is my private repo. replace it with your own private repo
+git branch -M main
+git push -u origin main
+```
+
+After these commands, you should have a copy of your starter code in your own repo and you can update the **mkdir_splitpath.c** with your solution code and execute the following git commands to push your updates to your own repo:
+
+```
+git add mkdir_splitpath.c
+git commit -m "your commit message here"
+git push -u origin main
+```
+
+You can also clone your repo and work on it and push the updates from different machines if you add the ssh public keys for these machines to your github profile.
+
+**Submission on Gradescope:**
+
+After you are logged in to your github account in a browser, if you follow the Gradescope assignment page for this project from Canvas and try to upload a submission, you will be able to select the Github submission options and select your private repository for this project to submit your solution on Gradescope.
