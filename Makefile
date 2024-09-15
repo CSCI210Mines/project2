@@ -1,11 +1,17 @@
 CC=gcc
-CFLAGS=-g -Werror -Wall -Wstrict-prototypes -Wundef -Wmissing-declarations -Wmissing-prototypes -std=gnu17 -ggdb3 -fsanitize=address
-SRCS=main.c
-TARGET=tree
+CFLAGS=-g -Wall
+DEPS = types.h
+OBJ = other_commands.o mkdir_splitpath.o 
 
-$(TARGET): $(SRCS)
-	$(CC) $(CFLAGS) $^ -o $@
+.DEFAULT_GOAL := main
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+main: main.c $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 .PHONY: clean
+
 clean:
-	rm -f $(TARGET)
+	rm -f mkdir_splitpath.o main
