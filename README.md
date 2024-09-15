@@ -16,11 +16,17 @@ Your task on this project is to implement the **mkdir** command which will modif
 
 A complete solution executable that have all the commands implemented is available: **main** and can be executed from the command line on isengard.
 
-These fundamental commands function the same as in a standard linux terminal:
+When the program is executed you can type the following commands to interact with the simulated file system:
 
 - cd: change directory, allows for the traversal between directories
 - ls: list directory contents, displays files and directories within the current directory
-- pwd: print working directory, shows the full path of the current directory.
+- pwd: print working directory, shows the full path of the current directory
+- rm: remove a file
+- rmdir: remove an empty directory
+- touch: create a file
+- tree: displays the file system hierarchy with all the created directories and files
+- menu: prints the list of available commands
+- quit: quit the program
 
 ## Requirements for the splitPath() function
 
@@ -68,8 +74,8 @@ quit
 
 Output
 ```
-OUTPUT SUCCESS: node a created
-OUTPUT SUCCESS: node b created
+MKDIR SUCCESS: node /a created
+MKDIR SUCCESS: node /b created
 ```
 
 ### Sample Execution 2
@@ -84,9 +90,9 @@ quit
 
 Output
 ```
-OUTPUT ERROR: subdirectory a on path does not exist
-OUTPUT SUCCESS: node a created
-OUTPUT SUCCESS: node b created
+ERROR: directory a does not exist
+MKDIR SUCCESS: node /a successfully created
+MKDIR SUCCESS: node /a/b successfully created
 ```
 
 ### Sample Execution 3
@@ -101,9 +107,9 @@ quit
 
 Output
 ```
-FAIL - Directory a does not exist
-SUCCESS - Node a successfully created
-SUCCESS - Node a/b successfully created
+ERROR: directory a does not exist
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: Node a/b successfully created
 ```
 
 ### Sample Execution 4
@@ -117,6 +123,6 @@ quit
 
 Output
 ```
-SUCCESS - Node a successfully created
-SUCCESS - Node b successfully created
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: node b successfully created
 ```
