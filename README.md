@@ -22,14 +22,14 @@ These fundamental commands function the same as in a standard linux terminal:
 - ls: list directory contents, displays files and directories within the current directory
 - pwd: print working directory, shows the full path of the current directory.
 
-## Tips
+## Requirements for the splitPath() function
 
-A good way to approach this project may be the following:
-- Implement the main() function, including the switch case for commands. Implement findCmd() to help.
-- Initialize any Node structs or variables you might need.
 - Implement the tokenizer using `strtok`: split strings based on delimiter ("/"); store tokens so that they can be used later in the program (splitting dirName and pathName for example)
-- Implement mkdir functionality
-    - Handle whether path is absolute or relative
+
+## Requirements for the mkdir() function
+
+To implement mkdir functionality
+- Handle whether path is absolute or relative
 	- Create a new directory node
 	- Ensure that the directory node is properly connected (make sure it is the child/sibling of the proper node) and initialized. (fileType = 'D', childPtr = null, etc.)
 
@@ -37,21 +37,22 @@ A good way to approach this project may be the following:
 
 Your program will take in input via stdin until the `quit` instruction is entered, in which case the program should end.
 
-Input will be a string involving (perhaps erroneously - think of edge cases!) mkdir and paths.
+Your program will be tested with several inputs where each input is a sequence of commands separated by new lines.
 
 ## Output Format
 
-Your code should print to stdout in the following formats, in each respective scenario:
+Your **mkdir** implementation should print the following messages to stdout in the exact following format in each respective scenario:
 ```
-OUTPUT ERROR: invalid command
+MKDIR ERROR: directory <DIRECTORY> already exists
 // or
-OUTPUT ERROR: directory <DIRECTORY> already exists
+MKDIR ERROR: no path provided
 // or
-OUTPUT ERROR: subdirectory <DIRECTORY> on path does not exist
-// or
-OUTPUT ERROR: no path provided
-// or
-OUTPUT SUCCESS: node <NODE> created
+MKDIR SUCCESS: node <NODE> successfully created
+```
+
+In addition, your **splitPath** implementation should print the following error message to the stdout in the exact following format when the path contains a reference to a non existing parent directory:
+```
+ERROR: directory <DIRECTORY> does not exist
 ```
 
 ## Sample Executions
