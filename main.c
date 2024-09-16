@@ -25,8 +25,8 @@ Initializes the root node
 */
 void initialize(){
     root = (struct NODE *)malloc(sizeof(struct NODE));
-    root->parentPtr = root;
-    root->siblingPtr = root;
+    root->parentPtr = NULL;
+    root->siblingPtr = NULL;
     strcpy(root->name, "/");
     root->fileType = 'D';
     root->childPtr = NULL;
@@ -109,29 +109,29 @@ void printHelper(struct NODE *directory, int depth){
         printf("%s", spacing);
 
         if(directory->siblingPtr == NULL){
-            printf("|   \n"); 
+		printf("|   \n"); 
             
-            struct NODE *temp = directory;
-        char spacing[128] = "";
-        char t[128] = "";
+		struct NODE *temp = directory;
+		char spacing[128] = "";
+		char t[128] = "";
 
-        for(int i = 0; i < depth; i++){
-            if(temp->parentPtr->siblingPtr == NULL){
-                strcpy(t, "    ");
-            }
-            else{
-                strcpy(t, "|   ");
-            }
+		for(int i = 0; i < depth; i++){
+			if(temp->parentPtr->siblingPtr == NULL){
+			strcpy(t, "    ");
+			}
+			else{
+				strcpy(t, "|   ");
+			}
+	
+			srcat(t, spacing);
+			strcpy(spacing, t);
 
-            strcat(t, spacing);
-            strcpy(spacing, t);
+			temp = temp->parentPtr;
+		}
 
-            temp = temp->parentPtr;
-        }
-
-        printf("%s", spacing);
+		printf("%s", spacing);
             
-            printf("`---");
+		printf("`---");
         }
         else{
             printf("|---");

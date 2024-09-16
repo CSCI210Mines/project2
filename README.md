@@ -97,7 +97,7 @@ The directory name that is printed in the error message must be the first non-ex
 
 **Hint:** Set the **baseName** and **dirName** first and traverse the **dirName** using the string tokenizer function `strtok`, splitting the **dirName** with the delimiter "/".
 
-**Note:** **You can assume that no other path name other than "/" will end with the character "/". In other words, when referring to files and directories (other than the root dir), we will always end the path name with the name of the target directory or file.**
+**Note:** **You can assume that no other path name other than "/" will end with the character "/". In other words, when referring to files and directories (other than the root dir), we will always end the path name with the name of the target directory or file. Also note that the directory aliases ".." and "." are not implemented as part of this project.**
 
 ## Requirements for the mkdir() function
 
