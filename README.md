@@ -78,7 +78,26 @@ The nodes of the tree for this directory structure are shown below:
 
 ## Requirements for the splitPath() function
 
-- Implement the tokenizer using `strtok`: split strings based on delimiter ("/"); store tokens so that they can be used later in the program (splitting dirName and pathName for example)
+The function splitPath() with the following signature gets the complete path string to a file or directory as a relative or an absolute path:
+
+```
+struct NODE* splitPath(char* pathName, char* baseName, char* dirName)
+```
+
+The character array **pathName** is the path string which is the parameter to the commands, rm, rmdir, ls, cd, touch, mkdir. Note that when no parameter is specified, the path string is initialized to "/" by default. The goal of the splitPath function is to split the path string into two parts: **dirName** and **baseName**, which should character arrays setup by the caller function. The **dirName** is a sequence of directory names that show the path to the **baseName**, which is the name of the target file or directory. For example, for the path string "/a/b/c/f1.txt", "/a/b/c" should be copied over to the **dirName** and "f1.txt" should be copied over to the **baseName**. If the path string contains just the name of the file or directory (which means it refers to a file or directory in the current directory), then the **dirname** should just be an empty string, "", whereas **baseName** should be the same as the pathName (note that instead of direct pointer assignment, you should use string copying functions like strcpy or strncpy).
+
+In addition to setting the values for the **dirName** and **baseName** strings, the splitPath() function should return a pointer to the directory where the target file or directory resides. For example, if the **pathName** is "/a/b/c/f3.txt", splitPath() should return a pointer to the node structure that represents the directory "c". If the **pathName** is "/a/b/c", **dirName** should be set to "/a/b", **baseName** should be set to "c" and the function should return a pointer to the node structure that represents the directory "b".
+
+splitPath() shoud print the following message in the standard output (note that the error messages are not to be output to the standard error), if it detects a non-existent directory on the path:
+
+```
+ERROR: directory <DIRECTORY> does not exist
+```
+The directory name that is printed in the error message must be the first non-existent directory when the path is traversed from the root directory.
+
+**Hint:** Set the **baseName** and **dirName** first and traverse the **dirName** using the string tokenizer function `strtok`, splitting the **dirName** with the delimiter "/".
+
+**Note:** **You can assume that no other path name other than "/" will end with the character "/". In other words, when referring to files and directories (other than the root dir), we will always end the path name with the name of the target directory or file.**
 
 ## Requirements for the mkdir() function
 
