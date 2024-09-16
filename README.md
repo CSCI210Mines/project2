@@ -101,10 +101,7 @@ The directory name that is printed in the error message must be the first non-ex
 
 ## Requirements for the mkdir() function
 
-To implement mkdir functionality
-- Handle whether path is absolute or relative
-	- Create a new directory node
-	- Ensure that the directory node is properly connected (make sure it is the child/sibling of the proper node) and initialized. (fileType = 'D', childPtr = null, etc.)
+The mkdir() function should make a call to the splitPath() function to get the target directory name as **baseName**. It should setup the strings to hold **baseName** and **dirName** before the call to the splitPath() function. Note that in implementing the mkdir() function you can ignore the **dirName** string as everything you need is in **baseName** and in the return value of the splitPath() function, which is the node structure representing the parent directory of the target directory to be created. You should allocate memory for a new tree node for the directory to be created. You should also check whether the target directory already exists in the current directory and print out an error message accordingly in the standard output (see the **Output Format** section below). If the user does not specify any input to the mkdir command, the pathName string will just be "/" and this should result in the error message "MKDIR ERROR: no path provided" in the standard output. If there is no error, the directory node should be created with its fields set correctly, e.g., fileType set to 'D', parentPtr set to the return value of splitPath() and childPtr and sblingPtr set to NULL, and the newly created node should be added as the sibling of the last file/directory created in that parent directory (if it is the first child, then the childPtr of the parent should be set). Upon successful completion, the message "MKDIR SUCCESS: node <NODE> successfully created" should be printed on standard ouutput with <NODE> as the **pathName** input of the mkdir() function. 
 
 ## Input Format
 
