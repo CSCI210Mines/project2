@@ -6,7 +6,7 @@ In this project, you will be simulating a Unix file system using a tree. This is
 
 We have seen a lot of useful commands so far, such as: **mkdir**, **rmdir**, **ls**, **pwd**, and **cd**. As we begin to study C, it turns out that there is an interesting application of a data structure called a _tree_ which allows us to simulate these commands in code. Though this project is only in C, it will be a good review for your Unix knowledge. For simplicity, we won't be implementing flags on commands.
 
-A tree is a data structure which you'll see in *Data Structures & Algorithms*, *Discrete Math*, and again in *Algorithms*. For more on trees and dynamic structures, refer to the course textbook sections 2.10-2.13 (Wang, Systems Programming in Unix/Linux). In this project, you are given a starter code, which provides type definitions and helper functions to help you work with trees.
+A tree is a data structure which you'll see in *Data Structures & Algorithms*, *Discrete Math*, and again in *Algorithms*. For more on trees and dynamic structures, refer to the course textbook sections 2.10-2.13 (Wang, Systems Programming in Unix/Linux). In this project, you are given a starter code, which provides type definitions and helper functions to help you get started.
 
 Your task on this project is to implement the **mkdir** command which will modify a tree that simulates a Linux file system tree, where nodes represent files or directories.
 
@@ -27,6 +27,54 @@ When the program is executed you can type the following commands to interact wit
 - tree: displays the file system hierarchy with all the created directories and files
 - menu: prints the list of available commands
 - quit: quit the program
+
+## The Tree Structure
+
+Each directory or file including the root directory is represented by a tree node whose type is defined as follows in _types.h_:
+
+```
+struct NODE {
+    char name [64];
+    char fileType;
+    struct NODE* childPtr;
+    struct NODE* siblingPtr;
+    struct NODE* parentPtr;
+};
+```
+The fileType field should be set to 'F' for regular files and to 'D' for directories. Each file and directory has a name, which is at most 63 characters long (note that we need the NULL char for the end). If the node represents a directory and it has files or other directories in it, the **childPtr** would point to the first file or directory created in it. The order of creation would dictate the order of the children. In order to traverse the children nodes, one needs to follow the sibling pointers, **siblingPtr**, starting with the first child's siblingPtr. Each file or directory also has a pointer to its unique parent. Note that only the root directory has its parentPts set to NULL (see the initialize() function in main.c).
+
+If we run the simulator with the following commands:
+
+```
+mkdir a
+cd a
+touch f1.txt
+mkdir b
+touch f2.txt
+cd b
+touch f3.txt
+tree
+quit
+```
+we get the following output:
+
+```
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: node b successfully created
+/
+|
+`---a
+    |---f1.txt
+    |---b
+    |   |
+    |   `---f3.txt
+    |
+    `---f2.txt
+```
+
+The nodes of the tree for this directory structure are shown below:
+
+
 
 ## Requirements for the splitPath() function
 
