@@ -74,7 +74,7 @@ MKDIR SUCCESS: node b successfully created
 
 The nodes of the tree for this directory structure are shown below:
 
-[The Tree Structure](images/treeStructure.png)
+![The Tree Structure](images/treeStructure.png)
 
 ## Requirements for the splitPath() function
 
