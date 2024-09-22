@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -Wall
+CFLAGS=-g -Wall -std=c11
 DEPS = types.h
 OBJ = other_commands.o mkdir_splitpath.o 
 

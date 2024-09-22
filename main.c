@@ -123,7 +123,7 @@ void printHelper(struct NODE *directory, int depth){
 				strcpy(t, "|   ");
 			}
 	
-			srcat(t, spacing);
+			strcat(t, spacing);
 			strcpy(spacing, t);
 
 			temp = temp->parentPtr;
