@@ -45,7 +45,7 @@ int main(){
     //this while loop runs until 'quit' is entered
     while(1){
         strcpy(pathName, "/");
-        printf("input a command line : ");
+        fprintf(stderr,"input a command line : ");
         fgets(line, 128, stdin);
         line[strlen(line)-1] = 0;
         sscanf(line, "%s %s", command, pathName);
