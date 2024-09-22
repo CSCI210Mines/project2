@@ -1,0 +1,27 @@
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: node b successfully created
+MKDIR SUCCESS: node b successfully created
+/
+|---a
+|   |   
+|   `---b
+|   
+`---b
+MKDIR SUCCESS: node a/c successfully created
+/
+|---a
+|   |---b
+|   |   
+|   `---c
+|   
+`---b
+MKDIR SUCCESS: node a/c/d successfully created
+/
+|---a
+|   |---b
+|   |   
+|   `---c
+|       |   
+|       `---d
+|   
+`---b

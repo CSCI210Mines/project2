@@ -1,0 +1,15 @@
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: node b successfully created
+MKDIR SUCCESS: node b successfully created
+MKDIR SUCCESS: node a/c successfully created
+MKDIR SUCCESS: node a/c/d successfully created
+/
+|---a
+|   |---b
+|   |   
+|   `---c
+|       |   
+|       `---d
+|   
+`---b
+MKDIR ERROR: directory b already exists

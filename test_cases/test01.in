@@ -1,0 +1,10 @@
+mkdir a
+mkdir b
+cd a
+mkdir b
+tree
+cd /
+touch f1.txt
+mkdir c
+tree
+quit

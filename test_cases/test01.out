@@ -1,0 +1,18 @@
+MKDIR SUCCESS: node a successfully created
+MKDIR SUCCESS: node b successfully created
+MKDIR SUCCESS: node b successfully created
+/
+|---a
+|   |   
+|   `---b
+|   
+`---b
+MKDIR SUCCESS: node c successfully created
+/
+|---a
+|   |   
+|   `---b
+|---b
+|---f1.txt
+|   
+`---c

@@ -1,0 +1,11 @@
+mkdir a
+mkdir b
+cd a
+mkdir b
+cd /
+mkdir a/c
+mkdir a/c/d
+tree
+cd a
+mkdir b
+quit
