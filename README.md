@@ -173,7 +173,7 @@ Output
 ```
 ERROR: directory a does not exist
 MKDIR SUCCESS: node a successfully created
-MKDIR SUCCESS: Node a/b successfully created
+MKDIR SUCCESS: node a/b successfully created
 ```
 
 ### Sample Execution 4
