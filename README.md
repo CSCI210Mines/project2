@@ -28,6 +28,12 @@ When the program is executed you can type the following commands to interact wit
 - menu: prints the list of available commands
 - quit: quit the program
 
+The program prompt is output to stderr. So, if you want to redirect input from a file and redirect the output to a file without the prompts appearing as part of the output, you can run it like below:
+
+```
+./main < test01.in 2>/dev/null > output.txt
+```
+
 ## The Tree Structure
 
 Each directory or file including the root directory is represented by a tree node whose type is defined as follows in _types.h_:
@@ -214,7 +220,7 @@ git config --global user.email "tolgacan@mines.edu"
 git config --global user.name "Tolga Can"
 ```
 
-Create a private repository for this project under your own user name. For example, I created a private repo named **csci210_project2** and my github username is tolgacan. You can use the following command sequence to clone the starter repo and copy it to your private repo to work with. The **project2** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
+Create a private repository for this project under your own user name. For example, I created a private repo named **csci210_project2** and my github username is tolgacan. A private repo can be created from the GitHub web site by going to your repositories after clicking on your profile picture (e.g., https://github.com/tolgacan?tab=repositories) and clicking on the "New" button in the top right corner. After that, you can a command sequence similar to the one below to clone the starter repo and copy it to your private repo to work with. The **project2** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
 
 ```
 git clone git@github.com:CSCI210Mines/project2.git
