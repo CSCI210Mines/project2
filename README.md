@@ -82,7 +82,7 @@ The nodes of the tree for this directory structure are shown below:
 
 ![The Tree Structure](images/treeStructure.png)
 
-**Note:** **After the initialization of the tree, the only functions that create nodes in the tree structue are: mkdir() and touch(). The only functions that delete nodes from the tree structure are rm() and rmdir(). The functions tree(), splitPath(), and ls() just traverse the tree structure to acquire/print information.**
+**Note:** **After the initialization of the tree, the only functions that create nodes in the tree structure are: mkdir() and touch(). The only functions that delete nodes from the tree structure are rm() and rmdir(). The functions tree(), splitPath(), and ls() just traverse the tree structure to acquire/print information.**
 
 ## Requirements for the splitPath() function
 
